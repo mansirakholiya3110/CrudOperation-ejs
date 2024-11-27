@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-size: 14px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #5cb85c;
+            border: none;
+            border-radius: 3px;
+            color: #fff;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #4cae4c;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="/editData" method="post">
+        <input type="hidden" name="id" value="<%= record._id %>">
+        <input type="text" name="username" placeholder="Your name" value="<%= record.username %>" required>
+        <input type="text" name="email" placeholder="Your email" value="<%= record.email %>" required>
+        <input type="text" name="phone" placeholder="Your phone" value="<%= record.phone %>" required>
+        <input type="password" name="password" placeholder="Your password" value="<%= record.password %>" required>
+        <input type="submit" value="Update">
+    </form>
+</body>
+
+</html>
